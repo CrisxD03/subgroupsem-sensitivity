@@ -1,0 +1,17 @@
+# R
+.Rhistory
+.RData
+.Rapp.history
+.Ruserdata
+.Rproj.user/
+*.Rproj
+Rplots.pdf
+
+# Large or regenerated outputs
+results/sensitivity/runs/
+results/sensitivity/errors/
+results/checks/
+results/timing/
+
+# OS
+.DS_Store

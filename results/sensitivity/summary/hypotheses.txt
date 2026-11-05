@@ -1,0 +1,109 @@
+H1 (effect size): LR at N = 5000, robust (full rate >= 0.8 ) at s = 0.5 and 0.25?
+           method    N    s full_k  R full_rate mean_recovered rate_G1 rate_G2
+ SubgroupSEM (LR) 5000 0.25      2 20      0.10           1.70    0.75    0.55
+ SubgroupSEM (LR) 5000 0.50     17 20      0.85           2.85    1.00    1.00
+ SubgroupSEM (LR) 5000 1.00     20 20      1.00           3.00    1.00    1.00
+ rate_G3 failed_fits_mean
+    0.40                0
+    0.85                0
+    1.00                0
+-> H1 NOT SUPPORTED 
+
+H2 (sample size): LR at s = 1, robust at N = 2500 and 500?
+           method     N s full_k  R full_rate mean_recovered rate_G1 rate_G2
+ SubgroupSEM (LR)   500 1      1 20      0.05            1.6    0.65     0.7
+ SubgroupSEM (LR)  2500 1     20 20      1.00            3.0    1.00     1.0
+ SubgroupSEM (LR)  5000 1     20 20      1.00            3.0    1.00     1.0
+ SubgroupSEM (LR) 10000 1     20 20      1.00            3.0    1.00     1.0
+ rate_G3 failed_fits_mean
+    0.25              2.4
+    1.00              0.0
+    1.00              0.0
+    1.00              0.0
+-> H2 NOT SUPPORTED 
+
+H3 (IM): per condition (s > 0) and planted group, is the group robustly recovered (rate >= 0.8 ) by each IM? H3 holds if the three IMs agree everywhere.
+     N    s group  (LR)  (UD) (Wald) agree
+   500 0.25    G1 FALSE FALSE  FALSE  TRUE
+   500 0.50    G1 FALSE FALSE  FALSE  TRUE
+   500 1.00    G1 FALSE  TRUE  FALSE FALSE
+  2500 0.25    G1 FALSE FALSE  FALSE  TRUE
+  2500 0.50    G1  TRUE  TRUE   TRUE  TRUE
+  2500 1.00    G1  TRUE  TRUE   TRUE  TRUE
+  5000 0.25    G1 FALSE  TRUE  FALSE FALSE
+  5000 0.50    G1  TRUE  TRUE   TRUE  TRUE
+  5000 1.00    G1  TRUE  TRUE   TRUE  TRUE
+ 10000 0.25    G1  TRUE  TRUE   TRUE  TRUE
+ 10000 0.50    G1  TRUE  TRUE   TRUE  TRUE
+ 10000 1.00    G1  TRUE  TRUE   TRUE  TRUE
+   500 0.25    G2 FALSE FALSE  FALSE  TRUE
+   500 0.50    G2 FALSE FALSE  FALSE  TRUE
+   500 1.00    G2 FALSE  TRUE  FALSE FALSE
+  2500 0.25    G2 FALSE FALSE  FALSE  TRUE
+  2500 0.50    G2  TRUE  TRUE   TRUE  TRUE
+  2500 1.00    G2  TRUE  TRUE   TRUE  TRUE
+  5000 0.25    G2 FALSE FALSE  FALSE  TRUE
+  5000 0.50    G2  TRUE  TRUE   TRUE  TRUE
+  5000 1.00    G2  TRUE  TRUE   TRUE  TRUE
+ 10000 0.25    G2  TRUE  TRUE   TRUE  TRUE
+ 10000 0.50    G2  TRUE  TRUE   TRUE  TRUE
+ 10000 1.00    G2  TRUE  TRUE   TRUE  TRUE
+   500 0.25    G3 FALSE FALSE  FALSE  TRUE
+   500 0.50    G3 FALSE FALSE  FALSE  TRUE
+   500 1.00    G3 FALSE FALSE  FALSE  TRUE
+  2500 0.25    G3 FALSE FALSE  FALSE  TRUE
+  2500 0.50    G3 FALSE FALSE  FALSE  TRUE
+  2500 1.00    G3  TRUE FALSE   TRUE FALSE
+  5000 0.25    G3 FALSE FALSE  FALSE  TRUE
+  5000 0.50    G3  TRUE FALSE   TRUE FALSE
+  5000 1.00    G3  TRUE FALSE   TRUE FALSE
+ 10000 0.25    G3 FALSE FALSE   TRUE FALSE
+ 10000 0.50    G3  TRUE FALSE   TRUE FALSE
+ 10000 1.00    G3  TRUE FALSE   TRUE FALSE
+-> H3 NOT SUPPORTED (9 of 36 condition-group pairs disagree) 
+
+H4 (superiority): mean number of recovered groups, LR vs SEM tree, s > 0
+     N    s mean_recovered_LR mean_recovered_tree LR_at_least_tree
+ 10000 0.25              2.50                2.00             TRUE
+ 10000 0.50              3.00                2.65             TRUE
+ 10000 1.00              3.00                2.60             TRUE
+  2500 0.25              1.35                0.45             TRUE
+  2500 0.50              2.55                1.70             TRUE
+  2500 1.00              3.00                2.60             TRUE
+   500 0.25              0.35                0.25             TRUE
+   500 0.50              0.65                0.45             TRUE
+   500 1.00              1.60                1.40             TRUE
+  5000 0.25              1.70                1.15             TRUE
+  5000 0.50              2.85                2.20             TRUE
+  5000 1.00              3.00                2.60             TRUE
+-> H4 SUPPORTED 
+
+Control s = 0 (nothing planted): IM value of the top-ranked subgroup, mean (sd)
+             method     N top1_mean   top1_sd full_k
+   SubgroupSEM (LR)   500  32.85410  5.172458      0
+   SubgroupSEM (LR)  2500  28.52029  3.715361      0
+   SubgroupSEM (LR)  5000  28.93562  4.468651      0
+   SubgroupSEM (LR) 10000  29.31774  3.702155      0
+   SubgroupSEM (UD)   500  11.62352  5.076230      0
+   SubgroupSEM (UD)  2500  10.17832  1.560642      0
+   SubgroupSEM (UD)  5000  10.44129  1.938159      0
+   SubgroupSEM (UD) 10000  10.43087  1.135060      0
+ SubgroupSEM (Wald)   500  43.34038 25.475412      0
+ SubgroupSEM (Wald)  2500  22.55900  5.352533      0
+ SubgroupSEM (Wald)  5000  22.28504  4.461813      0
+ SubgroupSEM (Wald) 10000  21.27441  3.751169      0
+
+Failed fits per search (mean) and datasets in which a planted group itself failed to fit
+             method   N    s failed_fits_mean datasets_planted_failed
+   SubgroupSEM (LR) 500 0.00             3.15                       2
+   SubgroupSEM (LR) 500 0.25             2.70                       2
+   SubgroupSEM (LR) 500 0.50             2.50                       2
+   SubgroupSEM (LR) 500 1.00             2.40                       6
+   SubgroupSEM (UD) 500 0.00             3.15                       2
+   SubgroupSEM (UD) 500 0.25             2.70                       2
+   SubgroupSEM (UD) 500 0.50             2.50                       2
+   SubgroupSEM (UD) 500 1.00             2.40                       6
+ SubgroupSEM (Wald) 500 0.00             3.15                       2
+ SubgroupSEM (Wald) 500 0.25             2.70                       2
+ SubgroupSEM (Wald) 500 0.50             2.50                       2
+ SubgroupSEM (Wald) 500 1.00             2.40                       6
