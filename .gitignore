@@ -15,3 +15,6 @@ results/timing/
 
 # OS
 .DS_Store
+
+# Replication outputs (regenerate with replication/reproduce_paper_figures.R)
+results/paper_figures/
